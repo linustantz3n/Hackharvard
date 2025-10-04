@@ -78,39 +78,29 @@ export default function VoiceRecorder({ onTranscriptComplete, isProcessing }) {
 
   return (
     <div className="flex flex-col items-center gap-8 w-full max-w-lg mx-auto">
-      {/* Voice Visualization */}
       <div className="relative">
         <AnimatePresence>
           {isListening && (
             <>
               <motion.div
-                
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
                 exit={{ scale: 0.8, opacity: 0 }}
                 transition={{ duration: 2, repeat: Infinity }}
-                
                 className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-teal-400 rounded-full blur-3xl"
               />
               <motion.div
-                
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.6, 0.4] }}
                 exit={{ scale: 0.9, opacity: 0 }}
                 transition={{ duration: 1.5, repeat: Infinity, delay: 0.3 }}
-                
                 className="absolute inset-0 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-full blur-2xl"
               />
             </>
           )}
         </AnimatePresence>
 
-        <motion.div
-          
-          whileTap={{ scale: 0.95 }}
-          
-          className="relative"
-        >
+        <motion.div whileTap={{ scale: 0.95 }} className="relative">
           <Button
             onClick={isListening ? stopListening : startListening}
             disabled={isProcessing}
@@ -131,12 +121,9 @@ export default function VoiceRecorder({ onTranscriptComplete, isProcessing }) {
         </motion.div>
       </div>
 
-      {/* Status Text */}
       <motion.div
-        
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        
         className="text-center"
       >
         <h3 className="text-2xl font-semibold text-gray-900 mb-2">
@@ -147,15 +134,12 @@ export default function VoiceRecorder({ onTranscriptComplete, isProcessing }) {
         </p>
       </motion.div>
 
-      {/* Transcript Display */}
       <AnimatePresence>
         {displayText && (
           <motion.div
-            
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            
             className="w-full bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg border border-gray-100"
           >
             <p className="text-gray-700 text-lg leading-relaxed">

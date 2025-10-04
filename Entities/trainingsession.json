@@ -1,0 +1,39 @@
+{
+  "name": "TrainingSession",
+  "type": "object",
+  "properties": {
+    "training_type": {
+      "type": "string",
+      "enum": [
+        "cpr_adult",
+        "cpr_child",
+        "cpr_infant",
+        "choking_adult",
+        "choking_child",
+        "aed_use"
+      ],
+      "description": "Type of training"
+    },
+    "score": {
+      "type": "number",
+      "description": "Score achieved (0-100)"
+    },
+    "duration_seconds": {
+      "type": "number",
+      "description": "How long the training took"
+    },
+    "compression_rate": {
+      "type": "number",
+      "description": "For CPR training - compressions per minute"
+    },
+    "accuracy": {
+      "type": "number",
+      "description": "Accuracy percentage"
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": []
+}

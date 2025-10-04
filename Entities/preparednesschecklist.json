@@ -1,0 +1,46 @@
+{
+  "name": "PreparednessChecklist",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Checklist title"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "home_safety",
+        "emergency_kit",
+        "evacuation_plan",
+        "medical_supplies",
+        "communication_plan"
+      ],
+      "description": "Checklist category"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "completed_count": {
+      "type": "number",
+      "default": 0
+    },
+    "total_count": {
+      "type": "number"
+    }
+  },
+  "required": []
+}

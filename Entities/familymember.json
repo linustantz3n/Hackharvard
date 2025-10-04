@@ -1,0 +1,46 @@
+{
+  "name": "FamilyMember",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Family member name"
+    },
+    "relationship": {
+      "type": "string",
+      "description": "Relationship (spouse, child, parent, etc.)"
+    },
+    "age": {
+      "type": "number"
+    },
+    "blood_type": {
+      "type": "string"
+    },
+    "allergies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Known allergies"
+    },
+    "medications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Current medications"
+    },
+    "medical_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Medical conditions"
+    },
+    "emergency_contact": {
+      "type": "string",
+      "description": "Emergency contact number"
+    }
+  },
+  "required": []
+}
