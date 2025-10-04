@@ -1,0 +1,61 @@
+{
+  "name": "EmergencySession",
+  "type": "object",
+  "properties": {
+    "transcript": {
+      "type": "string",
+      "description": "What the user said during the emergency"
+    },
+    "emergency_type": {
+      "type": "string",
+      "description": "Classified type of emergency (medical, fire, injury, etc.)"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "description": "Severity level of the emergency"
+    },
+    "guidance_steps": {
+      "type": "array",
+      "description": "Step-by-step guidance provided",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step_number": {
+            "type": "number"
+          },
+          "instruction": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "listening",
+        "processing",
+        "guiding",
+        "resolved",
+        "escalated"
+      ],
+      "default": "listening"
+    },
+    "emergency_contacts_notified": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "transcript",
+    "status"
+  ]
+}
