@@ -1,8 +1,8 @@
 {
-  "name": "TrainingSession",
+  "name": "TrainingProgress",
   "type": "object",
   "properties": {
-    "training_type": {
+    "exercise_type": {
       "type": "string",
       "enum": [
         "cpr_adult",
@@ -10,9 +10,9 @@
         "cpr_infant",
         "choking_adult",
         "choking_child",
-        "aed_use"
+        "aed_usage"
       ],
-      "description": "Type of training"
+      "description": "Type of training exercise"
     },
     "score": {
       "type": "number",
@@ -20,19 +20,18 @@
     },
     "duration_seconds": {
       "type": "number",
-      "description": "How long the training took"
-    },
-    "compression_rate": {
-      "type": "number",
-      "description": "For CPR training - compressions per minute"
-    },
-    "accuracy": {
-      "type": "number",
-      "description": "Accuracy percentage"
+      "description": "Time taken to complete"
     },
     "completed": {
       "type": "boolean",
-      "default": false
+      "description": "Whether exercise was completed"
+    },
+    "achievements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Badges or achievements earned"
     }
   },
   "required": []

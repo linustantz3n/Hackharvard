@@ -2,60 +2,55 @@
   "name": "EmergencySession",
   "type": "object",
   "properties": {
-    "transcript": {
-      "type": "string",
-      "description": "What the user said during the emergency"
-    },
     "emergency_type": {
       "type": "string",
-      "description": "Classified type of emergency (medical, fire, injury, etc.)"
+      "description": "Type of emergency (e.g., choking, chest pain, bleeding, etc.)"
+    },
+    "description": {
+      "type": "string",
+      "description": "User's description of the emergency"
     },
     "severity": {
       "type": "string",
       "enum": [
-        "low",
-        "medium",
-        "high",
-        "critical"
+        "critical",
+        "urgent",
+        "moderate",
+        "minor"
       ],
-      "description": "Severity level of the emergency"
+      "description": "AI-assessed severity level"
     },
-    "guidance_steps": {
+    "instructions": {
       "type": "array",
-      "description": "Step-by-step guidance provided",
       "items": {
         "type": "object",
         "properties": {
-          "step_number": {
+          "step": {
             "type": "number"
           },
           "instruction": {
             "type": "string"
           },
-          "completed": {
+          "critical": {
             "type": "boolean"
           }
         }
-      }
+      },
+      "description": "Step-by-step instructions provided"
     },
-    "status": {
+    "call_911_recommended": {
+      "type": "boolean",
+      "description": "Whether calling 911 was recommended"
+    },
+    "outcome": {
       "type": "string",
       "enum": [
-        "listening",
-        "processing",
-        "guiding",
-        "resolved",
-        "escalated"
+        "helped",
+        "called_911",
+        "abandoned"
       ],
-      "default": "listening"
-    },
-    "emergency_contacts_notified": {
-      "type": "boolean",
-      "default": false
+      "description": "Session outcome"
     }
   },
-  "required": [
-    "transcript",
-    "status"
-  ]
+  "required": []
 }

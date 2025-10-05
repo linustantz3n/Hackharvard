@@ -1,19 +1,15 @@
 {
-  "name": "PreparednessChecklist",
+  "name": "PreparednessList",
   "type": "object",
   "properties": {
-    "title": {
-      "type": "string",
-      "description": "Checklist title"
-    },
     "category": {
       "type": "string",
       "enum": [
-        "home_safety",
-        "emergency_kit",
-        "evacuation_plan",
-        "medical_supplies",
-        "communication_plan"
+        "home_kit",
+        "car_kit",
+        "emergency_plan",
+        "documents",
+        "contacts"
       ],
       "description": "Checklist category"
     },
@@ -22,24 +18,23 @@
       "items": {
         "type": "object",
         "properties": {
-          "item": {
+          "name": {
             "type": "string"
           },
-          "completed": {
+          "checked": {
             "type": "boolean"
           },
           "notes": {
             "type": "string"
           }
         }
-      }
+      },
+      "description": "Checklist items"
     },
-    "completed_count": {
-      "type": "number",
-      "default": 0
-    },
-    "total_count": {
-      "type": "number"
+    "last_reviewed": {
+      "type": "string",
+      "format": "date",
+      "description": "Last time checklist was reviewed"
     }
   },
   "required": []

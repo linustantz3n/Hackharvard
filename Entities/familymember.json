@@ -4,17 +4,31 @@
   "properties": {
     "name": {
       "type": "string",
-      "description": "Family member name"
+      "description": "Family member's name"
     },
     "relationship": {
       "type": "string",
-      "description": "Relationship (spouse, child, parent, etc.)"
+      "description": "Relationship to user"
     },
-    "age": {
-      "type": "number"
+    "date_of_birth": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of birth"
     },
     "blood_type": {
-      "type": "string"
+      "type": "string",
+      "enum": [
+        "A+",
+        "A-",
+        "B+",
+        "B-",
+        "AB+",
+        "AB-",
+        "O+",
+        "O-",
+        "Unknown"
+      ],
+      "description": "Blood type"
     },
     "allergies": {
       "type": "array",
@@ -35,11 +49,11 @@
       "items": {
         "type": "string"
       },
-      "description": "Medical conditions"
+      "description": "Chronic conditions"
     },
     "emergency_contact": {
       "type": "string",
-      "description": "Emergency contact number"
+      "description": "Emergency contact phone number"
     }
   },
   "required": []
